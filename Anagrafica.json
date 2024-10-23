@@ -1,0 +1,50 @@
+[
+{
+    "nome":"Giancarlo",
+    "cognome":"Esoposito",
+    "eta":28,
+    "indirizzo":"Via Brombei 14",
+    "citta": "Napoli",
+    "tel": "3809748831"
+},
+{
+    "nome":"Carla",
+    "cognome":"Adalberti",
+    "eta":40,
+    "indirizzo":"Via Pisacane 8",
+    "citta":"Torino",
+    "tel": "3206815525"
+},
+{
+    "nome":"Loris",
+    "cognome":"Sepulveda",
+    "eta":36,
+    "indirizzo": "Via Matera 1",
+    "citta": "Ascoli",
+    "tel": "3932165578"
+},
+{
+    "nome": "Roberta",
+    "cognome": "Rossi",
+    "eta": 60,
+    "indirizzo": "Via Sforza 11",
+    "citta": "Genova",
+    "tel": "3518834244"
+},
+{
+    "nome": "Micheal",
+    "cognome": "Casanova",
+    "eta": 21,
+    "indirizzo": "Via Solfatara 18",
+    "citta": "Perugia",
+    "tel": "3756238679"
+},
+{
+    "nome": "Leonardo",
+    "cognome": "Bianchi",
+    "eta": 16,
+    "indirizzo": "Via Pasqua 5",
+    "citta": "Catania",
+    "tel": "3396887920"
+}
+]
