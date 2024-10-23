@@ -1,0 +1,56 @@
+#type1 {
+    margin: 0 auto;
+    width: 400px;
+    font-weight: bold;
+    font-size: x-large;
+    list-style-type: none;}
+#type1 a { display:block; padding:5px 1em }
+    #type1 a:link, #type1 a:visited {
+    
+    background:#FFC;color:#000;
+    padding: 1px 1px;
+    text-decoration: none;
+    text-align: center;
+    }
+    
+    #type1 a:hover, #type1 a:focus,
+    #type a:active {
+    
+    background:url(freccetta.gif) #EEE
+    right center no-repeat;color:#900;
+    
+    }
+
+
+#type1 a:link,#tipo1 a:visited{
+
+border:3px solid #EEE;
+
+background:#EEE;
+
+color:#000;
+
+}
+
+#type1 a:hover,#type1 a:focus{
+
+border:3px outset #999;
+
+background:#FFF;
+
+color:#900;
+
+outline-style: none;
+
+}
+
+#type1 a:active{
+
+border:3px groove #333;
+
+background:#DDD;
+
+color:#f00;
+
+}
+
