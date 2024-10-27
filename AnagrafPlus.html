@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(148, 148, 144);
+            font-family: Arial;
+            margin: 20px;
+        }
+        table {
+            background-color: #ddd;
+            width: 100%;
+            margin-top: 20px;
+        }
+        #mainline{
+            color: rgb(255, 255, 255);
+            background-color: rgb(37, 36, 36);
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            font-size: 20px;
+            
+        }
+        #caricadati{
+            background-color: rgb(255, 255, 255);
+            border: 1px solid #464444;
+            color: black;
+            padding: 8px;
+            text-align: center;
+            font-size: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <table>
+        <tr id="mainline">
+            <td>NOME</td>
+            <td>COGNOME</td>
+            <td>ETA'</td>
+            <td>INDIRIZZO</td>
+            <td>CITTA'</td>
+            <td>TELEFONO</td>
+        </tr>
+        <tbody id="caricadati"></tbody>
+    </table>
+    <script>
+        var x = new XMLHttpRequest();
+        x.open("GET", "Elenco.json", true);
+        x.send();
+        x.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        var obj= JSON.parse(this.responseText);
+        var tab=document.getElementById("caricadati");
+        for(var i=0;i<obj.length;i++){
+            var tr=document.createElement("tr");
+            var per=obj[i];
+            var pr=["nome", "cognome", "eta", "indirizzo", "citta", "tel"];
+            for(var j=0;j<pr.length;j++){
+                var td=document.createElement("td");
+                if(pr[j]=="tel"){
+                    var t="";
+                   if(per.tel.cel) t+="cel:"+per.tel.cel+"<br>";
+                   if(per.tel.casa)t+="casa:"+per.tel.casa+"<br>";
+                   if(per.tel.ufficio)t+="ufficio:"+per.tel.ufficio+"<br>";
+                   td.innerHTML=t;
+                }
+                else{
+                td.innerText=per[pr[j]];}
+                tr.appendChild(td);
+            }
+            tab.appendChild(tr);
+        }
+        }
+        };
+    </script>
+</body>
+</html>
