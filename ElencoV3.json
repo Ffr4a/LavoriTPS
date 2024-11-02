@@ -1,0 +1,71 @@
+[
+{
+    "nome":"Giancarlo",
+    "cognome":"Esoposito",
+    "eta":28,
+    "indirizzo":"Via Brombei 14",
+    "citta": "Napoli",
+    "tel":{
+        "cel": "3809748831",
+        "casa": "020918863",
+        "ufficio": "3568889672"
+    },
+    "link": "Anagrafica 3/prova.jpg"
+},
+{
+    "nome":"Carla",
+    "cognome":"Adalberti",
+    "eta":40,
+    "indirizzo":"Via Pisacane 8",
+    "citta":"Torino",
+    "tel": {
+        "cel":"3206815525",
+        "casa": "028891457",
+        "ufficio": "3809720123"
+    }
+},
+{
+    "nome":"Loris",
+    "cognome":"Sepulveda",
+    "eta":36,
+    "indirizzo": "Via Matera 1",
+    "citta": "Ascoli",
+    "tel": {
+        "cel":"3932165578",
+        "casa": "0288842517"
+    }
+},
+{
+    "nome": "Roberta",
+    "cognome": "Rossi",
+    "eta": 60,
+    "indirizzo": "Via Sforza 11",
+    "citta": "Genova",
+    "tel":{
+        "cel": "3518834244",
+        "ufficio": "321456778"
+    }
+},
+{
+    "nome": "Micheal",
+    "cognome": "Casanova",
+    "eta": 21,
+    "indirizzo": "Via Solfatara 18",
+    "citta": "Perugia",
+    "tel":{
+        "cel": "3756238679"
+    }
+},
+{
+    "nome": "Leonardo",
+    "cognome": "Bianchi",
+    "eta": 16,
+    "indirizzo": "Via Pasqua 5",
+    "citta": "Catania",
+    "tel":{
+        "cel":"3396887920",
+        "casa": "0222218765",
+        "ufficio": "346729827"
+    } 
+}
+]
