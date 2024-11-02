@@ -34,7 +34,8 @@
     "tel": {
         "cel":"3932165578",
         "casa": "0288842517"
-    }
+    },
+    "link": "img3.jpg"
 },
 {
     "nome": "Roberta",
@@ -45,7 +46,8 @@
     "tel":{
         "cel": "3518834244",
         "ufficio": "321456778"
-    }
+    },
+    "link": "img4.jpg"
 },
 {
     "nome": "Micheal",
@@ -55,7 +57,8 @@
     "citta": "Perugia",
     "tel":{
         "cel": "3756238679"
-    }
+    },
+    "link": "img5.jpg"
 },
 {
     "nome": "Leonardo",
@@ -67,6 +70,7 @@
         "cel":"3396887920",
         "casa": "0222218765",
         "ufficio": "346729827"
-    } 
+    },
+    "link": "img6.jpg"
 }
 ]
