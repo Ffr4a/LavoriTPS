@@ -1,5 +1,5 @@
 {
- {  
+ 
         "nome": "nome: Giancarlo Esposito",
         "data": "nato: 1985-06-15",
         "email": "mail: mgiancarlo.esposito@mail.com",
@@ -15,5 +15,5 @@
         "lingua": "lingua: italiano, madrelingua",
         "straniere": "altre lingue: inglese, avanzato    spagolo, medio    russo,base",
         "hobby": "calcio, cavalli, moda"
- }
+ 
 }
