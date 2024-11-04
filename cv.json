@@ -1,5 +1,6 @@
 [
     {
+        "foto":"prova.jpg",
         "nome": "Giancarlo Esposito",
         "data": "nato: 1995-06-15",
         "email": "mail: giancarlo.esposito@mail.com",
@@ -16,7 +17,8 @@
         "straniere": "altre lingue: inglese, avanzato; spagnolo, medio; russo, base",
         "hobby": "hobby: calcio, cavalli, moda"
     },
-    {
+    {    
+        "foto":"img2.jpg",
         "nome": "Carla Adalberti",
         "data": "nata: 1983-05-20",
         "email": "mail: carla.adalberti@mail.com",
@@ -34,6 +36,7 @@
         "hobby": "hobby: lettura, yoga, viaggi"
     },
     {
+        "foto":"img3.jpg",
         "nome": "Loris Sepulveda",
         "data": "nato: 1987-09-12",
         "email": "mail: loris.sepulveda@mail.com",
@@ -51,6 +54,7 @@
         "hobby": "hobby: escursionismo, fotografia, disegno"
     },
     {
+        "foto":"img4.jpg",
         "nome": "Roberta Rossi",
         "data": "nata: 1963-04-25",
         "email": "mail: roberta.rossi@mail.com",
@@ -68,6 +72,7 @@
         "hobby": "hobby: giardinaggio, scrittura, teatro"
     },
     {
+        "foto":"img5.jpg",
         "nome": "Micheal Casanova",
         "data": "nato: 2002-11-30",
         "email": "mail: micheal.casanova@mail.com",
@@ -85,6 +90,7 @@
         "hobby": "hobby: programmazione, giochi da tavolo, sport"
     },
     {
+        "foto":"img6.jpg",
         "nome": "Leonardo Bianchi",
         "data": "nato: 2007-07-15",
         "email": "mail: leonardo.bianchi@mail.com",
