@@ -1,0 +1,19 @@
+{
+ {  
+        "nome": "nome: Giancarlo Esposito",
+        "data": "nato: 1985-06-15",
+        "email": "mail: mgiancarlo.esposito@mail.com",
+        "telefono": "tel: 3809748831",
+        "via": "indirizzo: Via Brombei 14",
+        "citta": "citta: Napoli",
+        "cap": "cap: 80121",
+        "nazione": "stato: Italia",
+        "università": "università: Università degli Studi di Napoli",
+        "superiori":"superiori: Superiori Istituto Tecnico Industriale",
+        "titolo": "titoli: Diploma di Perito Informatico, Laurea in Ingegneria Informatica",
+        "competenze": "competenze: Java, JavaScript, Python, DBMS",
+        "lingua": "lingua: italiano, madrelingua",
+        "straniere": "altre lingue: inglese, avanzato    spagolo, medio    russo,base",
+        "hobby": "calcio, cavalli, moda"
+ }
+}
