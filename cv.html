@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Curriculum Vitae</h1>
+    <div id="curriculum"></div>
+
+    <script>
+        var x = new XMLHttpRequest();
+        x.open("GET", "cv.json", true);
+        x.send();
+        x.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                var obj = JSON.parse(this.responseText);
+                var curriculum = document.getElementById("curriculum");
+                var out = '';
+                for (var key in obj) {
+                    output += obj[key] + "<br>";
+                }
+                curriculumDiv.innerHTML = output;
+            }
+        };
+    </script>
+</body>
+</html>
