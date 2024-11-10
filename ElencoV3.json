@@ -10,7 +10,8 @@
         "casa": "020918863",
         "ufficio": "3568889672"
     },
-    "link": "prova.jpg"
+    "link": "prova.jpg",
+    "cv": "Esposito.cv"
 },
 {
     "nome":"Carla",
@@ -23,7 +24,8 @@
         "casa": "028891457",
         "ufficio": "3809720123"
     },
-    "link": "img2.jpg"
+    "link": "img2.jpg",
+    "cv": "Adalberti.cv"
 },
 {
     "nome":"Loris",
@@ -35,7 +37,8 @@
         "cel":"3932165578",
         "casa": "0288842517"
     },
-    "link": "img3.jpg"
+    "link": "img3.jpg",
+    "cv": "Sepulveda.cv"
 },
 {
     "nome": "Roberta",
@@ -47,7 +50,8 @@
         "cel": "3518834244",
         "ufficio": "321456778"
     },
-    "link": "img4.jpg"
+    "link": "img4.jpg",
+    "cv": "Rossi.cv"
 },
 {
     "nome": "Micheal",
@@ -58,7 +62,8 @@
     "tel":{
         "cel": "3756238679"
     },
-    "link": "img5.jpg"
+    "link": "img5.jpg",
+    "cv": "Casanova.cv"
 },
 {
     "nome": "Leonardo",
@@ -71,6 +76,7 @@
         "casa": "0222218765",
         "ufficio": "346729827"
     },
-    "link": "img6.jpg"
+    "link": "img6.jpg",
+    "cv": "Bianchi.cv"
 }
 ]
