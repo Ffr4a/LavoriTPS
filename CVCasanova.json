@@ -1,0 +1,20 @@
+[
+{
+        "foto":"img5.jpg",
+        "nome": "Micheal Casanova",
+        "data": "2002-11-30",
+        "email": "micheal.casanova@mail.com",
+        "telefono": "3756238679",
+        "via": "Via Solfatara 18",
+        "citta": "Perugia",
+        "cap": "06100",
+        "nazione": "Italia",
+        "università": "Università degli Studi di Perugia (in corso)",
+        "superiori": "Istituto Tecnico Informatico",
+        "titolo": "Diploma di Maturità",
+        "competenze": "Programmazione, Sviluppo Web, Database",
+        "lingua": "italiano, madrelingua",
+        "straniere": "inglese, intermedio",
+        "hobby": "programmazione, giochi da tavolo, sport"
+    }
+]
