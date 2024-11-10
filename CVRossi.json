@@ -1,0 +1,20 @@
+[
+ {
+        "foto":"img4.jpg",
+        "nome": "Roberta Rossi",
+        "data": "1963-04-25",
+        "email": "roberta.rossi@mail.com",
+        "telefono": "3518834244",
+        "via": "Via Sforza 11",
+        "citta": "Genova",
+        "cap": "16100",
+        "nazione": "Italia",
+        "università": "Università degli Studi di Genova",
+        "superiori": "Liceo Scientifico",
+        "titolo": "Laurea in Lettere",
+        "competenze": "Storia, Filosofia, Scrittura Creativa",
+        "lingua": "italiano, madrelingua",
+        "straniere": "inglese, avanzato; tedesco, base",
+        "hobby": "giardinaggio, scrittura, teatro"
+    }
+]
