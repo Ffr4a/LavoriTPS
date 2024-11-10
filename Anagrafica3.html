@@ -39,8 +39,8 @@
         
     </style>
     <script>
-        function curriculum(){
-            window.location.href="cv.html";
+        function curriculum(cv){
+            window.location.href=cv;
         }
     </script>
 </head>
@@ -83,7 +83,7 @@
                     link.src=per[pr[j]];
                     link.style.width="100px";
                     link.style.height="100px";
-                    link.onclick=curriculum;
+                    link.onclick=curriculum(per.cv);
                     td.appendChild(link);
                 }
                 else{
