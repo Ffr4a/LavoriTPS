@@ -1,0 +1,20 @@
+[
+{    
+        "foto":"img2.jpg",
+        "nome": "Carla Adalberti",
+        "data": "1983-05-20",
+        "email": "carla.adalberti@mail.com",
+        "telefono": "3206815525",
+        "via": "Via Pisacane 8",
+        "citta": "Torino",
+        "cap": "10121",
+        "nazione": "Italia",
+        "università": "Università degli Studi di Torino",
+        "superiori": "Liceo Classico",
+        "titolo": "Laurea in Giurisprudenza",
+        "competenze": " Diritto Civile, Diritto Penale, Mediazione",
+        "lingua": "italiano, madrelingua",
+        "straniere": "inglese, avanzato; francese, medio",
+        "hobby": "lettura, yoga, viaggi"
+    }
+]
