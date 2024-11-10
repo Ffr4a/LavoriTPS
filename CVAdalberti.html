@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Curriculum Vitae</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,34 +19,40 @@
         .container {
             max-width: 800px;
             margin: auto;
+            display: flex; /* Layout in modalità flex */
+            gap: 20px; /* Spaziatura tra i box */
+        }
+        .info {
+            flex: 1; /* Occupa un'area di spazio flessibile */
+            border: 1px solid #ccc; /* Bordo del box */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9; /* Colore di sfondo per differenziare */
+        }
+        .info img {
+            max-width: 150px; 
+            border-radius: 75px; /* Immagine rotonda */
+        }
+        .details {
+            flex: 2; /* Occupa più spazio rispetto al box delle info */
             border: 1px solid #ccc;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-            display: flex; 
-        }
-        .info {
-            margin-right: 20px; 
-            flex: 0 0 auto; 
-        }
-        .info img {
-            max-width: 150px; 
-            border-radius: 75px; 
-        }
-        .details {
-            flex: 1; 
+            background-color: #f9f9f9;
         }
         .section {
             margin-bottom: 15px;
         }
         .section h2 {
-            color: #003366; 
+            color: #003366; /* Blu scuro per i titoli */
             margin: 0; 
         }
     </style>
 </head>
 <body>
-    <h1>-Curriculum Vitae-</h1>
+    <h1>- Curriculum Vitae -</h1>
     <div id="curriculum"></div>
 
     <script>
@@ -59,21 +65,31 @@
                 var curriculum = document.getElementById("curriculum");
                 var out = ''; 
                 for (var i = 0; i < obj.length; i++) { 
-                    out += '<div class="cv">' +
+                    out += '<div class="container">' +
+
+                        '<div class="info">' +
                         '<img src="' + obj[i].foto + '">' +
                         '<h2>' + obj[i].nome + '</h2>' +
                         '<p><strong>Data di nascita:</strong> ' + obj[i].data + '</p>' +
-                        '<p><strong>Email:</strong> ' + obj[i].email + '</p>' +
-                        '<p><strong>Telefono:</strong> ' + obj[i].telefono + '</p>' +
                         '<p><strong>Indirizzo:</strong> ' + obj[i].via + ', ' + obj[i].citta + ', ' + obj[i].cap + ', ' + obj[i].nazione + '</p>' +
+                        '</div>' +
+
+                        '<div class="details">' +
+                        '<div class="section"><h2>Contatti</h2>' +
+                        '<p><strong>Email:</strong> ' + obj[i].email + '</p>' +
+                        '<p><strong>Telefono:</strong> ' + obj[i].telefono + '</p></div>' +
+                        '<div class="section"><h2>Istruzione</h2>' +
                         '<p><strong>Università:</strong> ' + obj[i].università + '</p>' +
                         '<p><strong>Superiori:</strong> ' + obj[i].superiori + '</p>' +
-                        '<p><strong>Titoli:</strong> ' + obj[i].titolo + '</p>' +
-                        '<p><strong>Competenze:</strong> ' + obj[i].competenze + '</p>' +
-                        '<p><strong>Lingua:</strong> ' + obj[i].lingua + '</p>' +
-                        '<p><strong>Lingue straniere:</strong> ' + obj[i].straniere + '</p>' +
-                        '<p><strong>Hobby:</strong> ' + obj[i].hobby + '</p>' +
-                        '</div>';
+                        '<p><strong>Titoli:</strong> ' + obj[i].titolo + '</p></div>' +
+                        '<div class="section"><h2>Competenze</h2>' +
+                        '<p>' + obj[i].competenze + '</p></div>' +
+                        '<div class="section"><h2>Lingue straniere</h2>' +
+                        '<p>' + obj[i].lingua + '</p></div>' +
+                        '<div class="section"><h2>Hobby</h2>' +
+                        '<p>' + obj[i].hobby + '</p></div>' +
+                        '</div>' + // Chiusura di .details
+                        '</div>'; // Chiusura di .container
                 }
 
                 curriculum.innerHTML = out; 
