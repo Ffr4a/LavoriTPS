@@ -1,0 +1,20 @@
+[
+    {
+        "foto":"img6.jpg",
+        "nome": "Leonardo Bianchi",
+        "data": "2007-07-15",
+        "email": "leonardo.bianchi@mail.com",
+        "telefono": "3396887920",
+        "via": "Via Pasqua 5",
+        "citta": "Catania",
+        "cap": "95100",
+        "nazione": "Italia",
+        "università": "Scuola Superiore (in corso)",
+        "superiori": "Scuola Media",
+        "titolo": "Studente",
+        "competenze": "Tecnologia dell'informazione, Matematica",
+        "lingua": "italiano, madrelingua",
+        "straniere": "inglese, base",
+        "hobby": "ciclismo, fumetti, videogiochi"
+    }
+]
