@@ -7,45 +7,39 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4; /* Colore di sfondo leggermente grigio */
+            background-color: #ffffff; 
             color: #333; 
             margin: 0;
             padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 40px;
+            display: flex; /* Flexbox per layout */
         }
         .container {
             max-width: 800px;
             margin: auto;
             display: flex;
-            gap: 20px; 
+            justify-content: space-between; /* Spazia uniformemente */
         }
         .info {
             flex: 1;
-            padding: 20px;
-            background-color: #fff; 
-            border: 1px solid #ccc; 
-            border-radius: 5px; 
+            padding: 15px;
         }
         .info img {
-            max-width: 100px; 
-            border-radius: 50%; 
+            max-width: 100px; /* Dimensione immagine */
+            border-radius: 50%; /* Immagine rotonda */
+            display: block; /* Mostra l'immagine come blocco */
+            margin-left: auto; /* Centra a destra */
+            margin-bottom: 10px; /* Margine sotto l'immagine */
         }
-        .details {
-            flex: 2;
-            padding: 20px;
-            background-color: #fff; 
-            border: 1px solid #ccc; 
-            border-radius: 5px; 
+        h2 {
+            color: #003366; /* Colore blu per i titoli */
+            font-size: 16px; /* Dimensione del titolo */
+            margin: 5px 0; /* Margine sopra e sotto */
         }
-        .section {
-            margin-bottom: 15px;
+        p {
+            margin: 0; /* Rimuove margini dai paragrafi */
         }
-        .section h2 {
-            color: #003366; 
-            margin: 0; 
+        .value {
+            font-weight: bold; /* Grassetto per i valori */
         }
     </style>
 </head>
