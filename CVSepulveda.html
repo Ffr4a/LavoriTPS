@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {     
+            text-align: center;             
+            background-color: #2c3e50;              
+            color: white;             
+            font-family: Arial, sans-serif;         
+        }
+        h1 {  
+            margin-bottom: 20px;          
+        }
+        .cv { 
+            border: 1px solid #fff; 
+            padding: 10px; 
+            margin: 20px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>-Curriculum Vitae-</h1>
+    <div id="curriculum"></div>
+
+    <script>
+        var x = new XMLHttpRequest();
+        x.open("GET", "CVSepulveda.json", true); 
+        x.send();
+        x.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                var obj = JSON.parse(this.responseText);
+                var curriculum = document.getElementById("curriculum");
+                var out = ''; 
+                for (var i = 0; i < obj.length; i++) { 
+                    out += '<div class="cv">' +
+                        '<h2>' + obj[i].nome + '</h2>' +
+                        '<p><strong>Data di nascita:</strong> ' + obj[i].data + '</p>' +
+                        '<p><strong>Email:</strong> ' + obj[i].email + '</p>' +
+                        '<p><strong>Telefono:</strong> ' + obj[i].telefono + '</p>' +
+                        '<p><strong>Indirizzo:</strong> ' + obj[i].via + ', ' + obj[i].citta + ', ' + obj[i].cap + ', ' + obj[i].nazione + '</p>' +
+                        '<p><strong>Università:</strong> ' + obj[i].università + '</p>' +
+                        '<p><strong>Superiori:</strong> ' + obj[i].superiori + '</p>' +
+                        '<p><strong>Titoli:</strong> ' + obj[i].titolo + '</p>' +
+                        '<p><strong>Competenze:</strong> ' + obj[i].competenze + '</p>' +
+                        '<p><strong>Lingua:</strong> ' + obj[i].lingua + '</p>' +
+                        '<p><strong>Lingue straniere:</strong> ' + obj[i].straniere + '</p>' +
+                        '<p><strong>Hobby:</strong> ' + obj[i].hobby + '</p>' +
+                        '<img src="' + obj[i].foto + '">' +
+                        '</div>';
+                }
+
+                curriculum.innerHTML = out; 
+            }
+        };
+    </script>
+</body>
+</html>
