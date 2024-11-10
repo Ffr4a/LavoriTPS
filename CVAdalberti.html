@@ -19,23 +19,23 @@
         .container {
             max-width: 800px;
             margin: auto;
-            display: flex; /* Layout in modalità flex */
-            gap: 20px; /* Spaziatura tra i box */
+            display: flex;
+            gap: 20px; 
         }
         .info {
-            flex: 1; /* Occupa un'area di spazio flessibile */
-            border: 1px solid #ccc; /* Bordo del box */
+            flex: 1; 
+            border: 1px solid #ccc;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-            background-color: #f9f9f9; /* Colore di sfondo per differenziare */
+            background-color: #f9f9f9; 
         }
         .info img {
             max-width: 150px; 
-            border-radius: 75px; /* Immagine rotonda */
+            border-radius: 75px; 
         }
         .details {
-            flex: 2; /* Occupa più spazio rispetto al box delle info */
+            flex: 2; 
             border: 1px solid #ccc;
             padding: 20px;
             border-radius: 5px;
@@ -46,7 +46,7 @@
             margin-bottom: 15px;
         }
         .section h2 {
-            color: #003366; /* Blu scuro per i titoli */
+            color: #003366; 
             margin: 0; 
         }
     </style>
@@ -88,8 +88,8 @@
                         '<p>' + obj[i].lingua + '</p></div>' +
                         '<div class="section"><h2>Hobby</h2>' +
                         '<p>' + obj[i].hobby + '</p></div>' +
-                        '</div>' + // Chiusura di .details
-                        '</div>'; // Chiusura di .container
+                        '</div>' + 
+                        '</div>'; 
                 }
 
                 curriculum.innerHTML = out; 
