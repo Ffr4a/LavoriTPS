@@ -63,6 +63,7 @@
                 var out = ''; 
                 for (var i = 0; i < obj.length; i++) { 
                     out += '<div class="cv">' +
+                        '<img src="' + obj[i].foto + '">' +
                         '<h2>' + obj[i].nome + '</h2>' +
                         '<p><strong>Data di nascita:</strong> ' + obj[i].data + '</p>' +
                         '<p><strong>Email:</strong> ' + obj[i].email + '</p>' +
@@ -75,7 +76,6 @@
                         '<p><strong>Lingua:</strong> ' + obj[i].lingua + '</p>' +
                         '<p><strong>Lingue straniere:</strong> ' + obj[i].straniere + '</p>' +
                         '<p><strong>Hobby:</strong> ' + obj[i].hobby + '</p>' +
-                        '<img src="' + obj[i].foto + '">' +
                         '</div>';
                 }
 
