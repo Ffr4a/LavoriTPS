@@ -5,40 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body {     
-            font-family: Arial, sans-serif;         
-            background-color: white;              
-            color: #333;             
-            margin: 0;             
-            padding: 20px;         
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff; 
+            color: #333; 
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
         }
         .container {
+            max-width: 800px;
+            margin: auto;
             display: flex;
-            max-width: 800px;         
-            margin: auto;         
-            padding: 20px;         
-            border: 1px solid #ccc;         
-            border-radius: 5px;        
-            box-shadow: 0 0 5px rgba(0,0,0,0.1); 
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         }
-        .cv-image {
+        .info {
             margin-right: 20px; 
         }
-        .cv-image img {
-            max-width: 120px;
-            border-radius: 60px; /* Rende l'immagine rotonda */
+        .info img {
+            max-width: 150px;
+            border-radius: 75px; 
         }
-        .cv-info {
-            display: flex;
-            flex-direction: column;
+        .content {
+            flex: 1; 
         }
-        .field-title {
-            color: darkblue;
-            font-weight: bold;
+        .section {
+            margin-bottom: 20px;
         }
-        .field-content {
-            color: #000;
-            margin-bottom: 10px;
+        .section h2 {
+            color: #003366; 
+            margin: 0 0 5px;
+        }
+        .section p {
+            margin: 0; 
+            color: #333; 
         }
     </style>
 </head>
