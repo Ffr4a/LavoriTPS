@@ -11,7 +11,7 @@
         "ufficio": "3568889672"
     },
     "link": "prova.jpg",
-    "cv": "CVEsposito.json"
+    "cv": "CVEsposito.html"
 },
 {
     "nome":"Carla",
@@ -25,7 +25,7 @@
         "ufficio": "3809720123"
     },
     "link": "img2.jpg",
-    "cv": "CVAdalberti.json"
+    "cv": "CVAdalberti.html"
 },
 {
     "nome":"Loris",
@@ -38,7 +38,7 @@
         "casa": "0288842517"
     },
     "link": "img3.jpg",
-    "cv": "CVSepulveda.json"
+    "cv": "CVSepulveda.html"
 },
 {
     "nome": "Roberta",
@@ -51,7 +51,7 @@
         "ufficio": "321456778"
     },
     "link": "img4.jpg",
-    "cv": "CVRossi.json"
+    "cv": "CVRossi.html"
 },
 {
     "nome": "Micheal",
@@ -63,7 +63,7 @@
         "cel": "3756238679"
     },
     "link": "img5.jpg",
-    "cv": "CVCasanova.json"
+    "cv": "CVCasanova.html"
 },
 {
     "nome": "Leonardo",
@@ -77,6 +77,6 @@
         "ufficio": "346729827"
     },
     "link": "img6.jpg",
-    "cv": "CVBianchi.json"
+    "cv": "CVBianchi.html"
 }
 ]
