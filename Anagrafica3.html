@@ -15,16 +15,15 @@
             width: 100%;
             margin-top: 20px;
         }
-        #mainline{
+        #mainline {
             color: rgb(255, 255, 255);
             background-color: rgb(37, 36, 36);
             border: 1px solid #ddd;
             padding: 8px;
             text-align: center;
             font-size: 20px;
-            
         }
-        #caricadati{
+        #caricadati {
             background-color: rgb(255, 255, 255);
             border: 1px solid #464444;
             color: black;
@@ -32,15 +31,13 @@
             text-align: center;
             font-size: 20px;
         }
-
         img:hover {
             transform: scale(1.5); 
         }
-        
     </style>
     <script>
-        function curriculum(cv){
-            window.location.href=cv;
+        function curriculum(cv) {
+            window.location.href = cv;
         }
     </script>
 </head>
@@ -62,38 +59,40 @@
         x.open("GET", "ElencoV3.json", true);
         x.send();
         x.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-        var obj= JSON.parse(this.responseText);
-        var tab=document.getElementById("caricadati");
-        for(var i=0;i<obj.length;i++){
-            var tr=document.createElement("tr");
-            var per=obj[i];
-            var pr=["nome", "cognome", "eta", "indirizzo", "citta", "tel","link"];
-            for(var j=0;j<pr.length;j++){
-                var td=document.createElement("td");
-                if(pr[j]=="tel"){
-                    var t="";
-                   if(per.tel.cel) t+="cel:"+per.tel.cel+"<br>";
-                   if(per.tel.casa)t+="casa:"+per.tel.casa+"<br>";
-                   if(per.tel.ufficio)t+="ufficio:"+per.tel.ufficio+"<br>";
-                   td.innerHTML=t;
-                }
-                else if(pr[j]=="link"){
-                    var link=document.createElement("img");
-                    link.src=per[pr[j]];
-                    link.style.width="100px";
-                    link.style.height="100px";
-                    link.onclick=function() {curriculum(per.cv)};
-                    td.appendChild(link);
-                }
-                else{
-                td.innerText=per[pr[j]];
+            if (this.readyState == 4 && this.status == 200) {
+                var obj = JSON.parse(this.responseText);
+                var tab = document.getElementById("caricadati");
+                for (var i = 0; i < obj.length; i++) {
+                    var tr = document.createElement("tr");
+                    var per = obj[i];
+                    var pr = ["nome", "cognome", "eta", "indirizzo", "citta", "tel", "link"];
+                    for (var j = 0; j < pr.length; j++) {
+                        var td = document.createElement("td");
+                        if (pr[j] == "tel") {
+                            var t = "";
+                            if (per.tel.cel) t += "cel:" + per.tel.cel + "<br>";
+                            if (per.tel.casa) t += "casa:" + per.tel.casa + "<br>";
+                            if (per.tel.ufficio) t += "ufficio:" + per.tel.ufficio + "<br>";
+                            td.innerHTML = t;
+                        }
+                        else if (pr[j] == "link") {
+                            (function(person) {
+                                var link = document.createElement("img");
+                                link.src = person[pr[j]];
+                                link.style.width = "100px";
+                                link.style.height = "100px";
+                                link.onclick = function() { curriculum(person.cv); };
+                                td.appendChild(link);
+                            })(per);
+                        }
+                        else {
+                            td.innerText = per[pr[j]];
+                        }
+                        tr.appendChild(td);
                     }
-                tr.appendChild(td);
+                    tab.appendChild(tr);
+                }
             }
-            tab.appendChild(tr);
-        }
-        }
         };
     </script>
 </body>
