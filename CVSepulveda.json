@@ -1,0 +1,20 @@
+[
+{
+        "foto":"img3.jpg",
+        "nome": "Loris Sepulveda",
+        "data": "1987-09-12",
+        "email": "loris.sepulveda@mail.com",
+        "telefono": "3932165578",
+        "via": "Via Matera 1",
+        "citta": "Ascoli",
+        "cap": "63100",
+        "nazione": "Italia",
+        "università": "Università Politecnica delle Marche",
+        "superiori": "Istituto Tecnico per Geometri",
+        "titolo": "Laurea in Architettura",
+        "competenze": "Progettazione, AutoCAD, Grafica 3D",
+        "lingua": "italiano, madrelingua",
+        "straniere": "inglese, avanzato; spagnolo, intermedio",
+        "hobby": "escursionismo, fotografia, disegno"
+    }
+]
