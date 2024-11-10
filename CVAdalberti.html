@@ -7,39 +7,38 @@
     <style>
         body {     
             font-family: Arial, sans-serif;         
-            background-color: #f0f0f0;              
+            background-color: white;              
             color: #333;             
             margin: 0;             
             padding: 20px;         
         }
-        h1 {  
-            text-align: center;          
-            margin-bottom: 40px;          
-        }
         .container {
-            max-width: 600px;         
+            display: flex;
+            max-width: 800px;         
             margin: auto;         
-            background-color: white;         
             padding: 20px;         
-            border-radius: 5px;         
+            border: 1px solid #ccc;         
+            border-radius: 5px;        
             box-shadow: 0 0 5px rgba(0,0,0,0.1); 
         }
-        .cv { 
-            border-bottom: 1px solid #ccc; 
-            padding: 10px 0;         
+        .cv-image {
+            margin-right: 20px; 
         }
-        .cv:last-child {
-            border: none;
+        .cv-image img {
+            max-width: 120px;
+            border-radius: 60px; /* Rende l'immagine rotonda */
         }
-        h2 {
-            margin: 0 0 10px;
-            font-size: 22px;
+        .cv-info {
+            display: flex;
+            flex-direction: column;
         }
-        p {
-            margin: 5px 0;
+        .field-title {
+            color: darkblue;
+            font-weight: bold;
         }
-        img {
-            max-width: 100px;
+        .field-content {
+            color: #000;
+            margin-bottom: 10px;
         }
     </style>
 </head>
