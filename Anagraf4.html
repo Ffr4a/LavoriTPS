@@ -41,8 +41,8 @@
         }
 
         function portfolio(prt){
-            localStorage.setItem(port,prt)
-            window.location.href=Show.html;
+            localStorage.setItem("port",prt)
+            window.location.href="Show.html";
         }
     </script>
 </head>
@@ -62,7 +62,7 @@
     </table>
     <script>
         var x = new XMLHttpRequest();
-        x.open("GET", "Elenco.json", true);
+        x.open("GET", "Lista.json", true);
         x.send();
         x.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
