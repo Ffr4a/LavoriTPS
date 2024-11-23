@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-image:url(spesa.avif);
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    .sbm:hover{
+        background-color: rgb(233, 183, 21);
+    }
+    input{
+        
+        font-size: 30px;
+    }
+
+    input:hover{
+        background-color: rgb(185, 184, 181);
+    }
+
+    button{
+        font-size: 30px;
+    }
+
+    button:hover{
+        background-color: chartreuse;
+    }
+    
+    .add:hover{
+        background-color: chartreuse;
+    }
+
+</style>
+<body>
+    <center>
+        <h1 style="color: rgb(218, 99, 19); font-weight: bold; font-size: 60px;">Aggiungi elementi alla tua lista della spesa</h1>
+    <div id="container" style="padding-bottom: 20px; font-size: 30px;">
+        <input type="text" id="insert" placeholder="Aggiungi un elemento">
+        <input type="button" value="+" class="add" onclick="aggiungi(document.getElementById('insert'))">
+    </div>
+    <input type="submit" value="Invia" onclick="invia()" style="font-size: 30px; " class="sbm">
+</center>
+</body>
+<script>
+    var v=[];
+    function aggiungi(insert){
+        v.push(insert.value);  //aggiungo elemento al vettore
+        const inp=document.createElement("input");  //creo input text
+        inp.placeholder="Aggiungi elemento"; 
+        const bt=document.createElement("button"); //creo bottone
+        const space=document.createElement("br"); //br per andare a capo
+        bt.onclick=function(){aggiungi(inp)};
+        bt.innerHTML="+";
+        document.getElementById("container").appendChild(space);
+        document.getElementById("container").appendChild(inp);
+        document.getElementById("container").appendChild(bt);
+    }
+
+    function invia(){
+        localStorage.setItem("vett",v);
+        document.location.href="Mylist.html";
+    }
+</script>
+</html>

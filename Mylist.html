@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My List</title>
+<style>
+    ul{
+        list-style-type: none; 
+        font-size: 40px;
+        
+    }
+    button:hover{
+        background-color: rgb(233, 37, 37);
+       
+    }
+
+    button{
+        font-size: 30px;
+    }
+
+    body{
+        background-image: url(lista.avif);
+        background-size: cover;
+        background-attachment: fixed;
+    }
+</style>
+</head>
+<body>
+    <center>
+    <h1 style="color: darkred; font-size: 50px;">Ecco la tua lista della spesa:</h1>
+    <ul id="list"></ul>
+</center>
+
+<script>
+    var vett = localStorage.getItem("vett");
+    if(vett){ //controlla se c'è del contenuto nel vettore
+        vett = vett.split(","); 
+        var list = document.getElementById("list");
+
+        function rimuovi(pos){
+            vett.splice(pos, 1); //rimuove il singolo elemento e ricrea il vettore 
+            localStorage.setItem("vett", vett); //aggiorno il local storage con il vettore modificato
+            location.reload();  //funzione che mi permette di ricaricare la pagina in automatico
+        }
+
+        for(var i = 0; i < vett.length; i++){
+            var item = document.createElement("li"); //creo elemento nell'elenco
+            item.innerHTML = vett[i];
+
+            var button = document.createElement("button"); //creo bottone per rimuovere
+            button.innerHTML = "X";
+            button.addEventListener("click", function(){ //attiva funzione remove al click del bottone
+                var pos = Array.from(list.children).indexOf(this.parentNode); //ricerca tra gli elementi figli della mia tabella con id "list", la posizione dell'elemento corrente 
+                rimuovi(pos);
+            });
+
+            item.appendChild(button);
+            list.appendChild(item);
+        }
+    }
+    else{
+        document.getElementById("list").innerHTML="Lista vuota";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url(olimp.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <canvas id="myCanvas" width="700" height="900">
+        </canvas>
+    </center>
+    
+        <script>
+            var a=0;b=0;
+            setInterval(disegna,100);
+    
+            function disegna(){
+                a=a+0.1;
+                var canvas=document.getElementById("myCanvas");
+                var ctx=canvas.getContext("2d");
+                ctx.lineWidth=10;
+                ctx.beginPath();
+                ctx.arc(95,500,90,0,100);
+                ctx.strokeStyle="blue";
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.arc(300,500,90,0,100);
+                ctx.strokeStyle="black";
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.arc(505,500,90,0,100);
+                ctx.strokeStyle="red";
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.arc(197,620,90,0,100);
+                ctx.strokeStyle="gold";
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.arc(402,620,90,0,100);
+                ctx.strokeStyle="green";
+                ctx.stroke();
+                //sovrapposizioni
+                ctx.beginPath();
+                ctx.arc(95,500,90,0,1);
+                ctx.strokeStyle="blue";
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.arc(300,500,90,0,2);
+                ctx.strokeStyle="black";
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.arc(402,620,90,0,4);
+                ctx.strokeStyle="green";
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.arc(505,500,90,0,2);
+                ctx.strokeStyle="red";
+                ctx.stroke();
+
+                
+            }
+        </script>
+</body>
+</html>
