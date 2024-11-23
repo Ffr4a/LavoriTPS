@@ -5,91 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curriculum Vitae</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #ffffff; 
-            color: #333; 
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            display: flex;
-            gap: 10px; 
-        }
-        .info, .details {
-            flex: 1;
-            padding: 15px;
-            border: 1px solid #ccc; 
-            background-color: #f9f9f9;
-        }
-        .info img {
-            max-width: 100px; 
-            border-radius: 50%;
-            margin: 0 auto 10px; 
-        }
-        .details h2 {
-            font-size: 18px; 
-            margin: 10px 0; 
-            color: #003366; 
-        }
-        h2 {
-            font-size: 18px; 
-            margin: 10px 0; 
-            color: #003366;
-        }
-        p {
-            font-size: 16px; 
+        body{
+            background-color: rgb(148, 148, 144);
+            font-family: Arial;
+            margin: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>- Curriculum Vitae -</h1>
-    <div id="curriculum"></div>
+    <h1>Portfolio</h1>
+    <div id="port"></div>
 
     <script>
         var x = new XMLHttpRequest();
-        x.open("GET", "CVAdalberti.json", true); 
+        var file=localStorage.getItem("port");
+        x.open("GET", file , true); 
         x.send();
         x.onreadystatechange = function() {
             if (this.readyState === 4 && this.status === 200) {
-                var obj = JSON.parse(this.responseText);
-                var curriculum = document.getElementById("curriculum");
-                var out = ''; 
-                for (var i = 0; i < obj.length; i++) { 
-                    out += '<div class="container">' +
-
-                        '<div class="info">' +
-                        '<img src="' + obj[i].foto + '">' +
-                        '<h2>' + obj[i].nome + '</h2>' +
-                        '<p><strong>Data di nascita:</strong> ' + obj[i].data + '</p>' +
-                        '<p><strong>Indirizzo:</strong> ' + obj[i].via + ', ' + obj[i].citta + ', ' + obj[i].cap + ', ' + obj[i].nazione + '</p>' +
-                        '</div>' +
-
-                        '<div class="details">' +
-                        '<div class="section"><h2>Contatti</h2>' +
-                        '<p><strong>Email:</strong> ' + obj[i].email + '</p>' +
-                        '<p><strong>Telefono:</strong> ' + obj[i].telefono + '</p></div>' +
-                        '<div class="section"><h2>Istruzione</h2>' +
-                        '<p><strong>Università:</strong> ' + obj[i].università + '</p>' +
-                        '<p><strong>Superiori:</strong> ' + obj[i].superiori + '</p>' +
-                        '<p><strong>Titoli:</strong> ' + obj[i].titolo + '</p></div>' +
-                        '<div class="section"><h2>Competenze</h2>' +
-                        '<p>' + obj[i].competenze + '</p></div>' +
-                        '<div class="section"><h2>Lingue straniere</h2>' +
-                        '<p>' + obj[i].lingua + '</p></div>' +
-                        '<div class="section"><h2>Hobby</h2>' +
-                        '<p>' + obj[i].hobby + '</p></div>' +
-                        '</div>' + 
-                        '</div>'; 
+                var i;
+                var xml=this.responseXML;
+                var port=document.getElementById("port");
+                var lavori=xml.getElementsByTagName("lavoro");
+                for(var i=0; i < lavori.length; i++){
+                    var titolo= lavori[i].childNodes[1].nodeValue;
+                    var link=lavori[i].childNodes[2].nodeValue;
+                    var lav=document.createElement("div");
+                    var lin=document.createElement("a");
+                    lin.href=link;
+                    lin.textContent=titolo;
+                    lin.target="_blank";
+                    lav.appendChild(lin);
+                    port.appendChild(lav);
                 }
 
-                curriculum.innerHTML = out; 
             }
         };
     </script>
