@@ -28,8 +28,8 @@
                 var port=document.getElementById("port");
                 var lavori=xml.getElementsByTagName("lavoro");
                 for(var i=0; i < lavori.length; i++){
-                    var titolo= lavori[i].childNodes[1].nodeValue;
-                    var link=lavori[i].childNodes[2].nodeValue;
+                    var titolo= lavori[i].getElementsByTagName("titolo")[0].textContent;
+                    var link=lavori[i].getElementsByTagName("link")[0].textContent;
                     var lav=document.createElement("div");
                     var lin=document.createElement("a");
                     lin.href=link;
