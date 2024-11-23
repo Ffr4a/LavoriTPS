@@ -1,0 +1,14 @@
+<portfolio>
+    <proprietario>
+        <nome>Loris</nome>
+        <cognome>Sepulveda</cognome>
+    </proprietario>
+    <lavoro>
+        <titolo>FloatBox</titolo>
+        <link>FloatBox.html</link>
+    </lavoro>
+    <lavoro>
+        <titolo>Homepage</titolo>
+        <link>Homepage.html</link>
+    </lavoro>
+</portfolio>

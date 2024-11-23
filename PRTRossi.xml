@@ -1,0 +1,14 @@
+<portfolio>
+    <proprietario>
+        <nome>Roberta</nome>
+        <cognome>Rossi</cognome>
+    </proprietario>
+    <lavoro>
+        <titolo>Calcolatrice</titolo>
+        <link>Calcolatrice.html</link>
+    </lavoro>
+    <lavoro>
+        <titolo>Kahoot</titolo>
+        <link>Kahoot.html</link>
+    </lavoro>
+</portfolio>

@@ -1,0 +1,14 @@
+<portfolio>
+    <proprietario>
+        <nome>Micheal</nome>
+        <cognome>Casanova</cognome>
+    </proprietario>
+    <lavoro>
+        <titolo>Aquisizione Dati</titolo>
+        <link>AqDati.html</link>
+    </lavoro>
+    <lavoro>
+        <titolo>CSV</titolo>
+        <link>csv.html</link>
+    </lavoro>
+</portfolio>

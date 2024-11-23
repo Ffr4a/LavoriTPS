@@ -1,0 +1,14 @@
+<portfolio>
+    <proprietario>
+        <nome>Giancarlo</nome>
+        <cognome>Esposito</cognome>
+    </proprietario>
+    <lavoro>
+        <titolo>Ricetta</titolo>
+        <link>Ricetta.html</link>
+    </lavoro>
+    <lavoro>
+        <titolo>Icone</titolo>
+        <link>Icone.html</link>
+    </lavoro>
+</portfolio>

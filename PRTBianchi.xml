@@ -1,0 +1,14 @@
+<portfolio>
+    <proprietario>
+        <nome>Leonardo</nome>
+        <cognome>Bianchi</cognome>
+    </proprietario>
+    <lavoro>
+        <titolo>DOM</titolo>
+        <link>dom.html</link>
+    </lavoro>
+    <lavoro>
+        <titolo>Canvas</titolo>
+        <link>Canvas.html</link>
+    </lavoro>
+</portfolio>

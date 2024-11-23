@@ -1,0 +1,14 @@
+<portfolio>
+    <proprietario>
+        <nome>Carla</nome>
+        <cognome>Adalberti</cognome>
+    </proprietario>
+    <lavoro>
+        <titolo>Gallery</titolo>
+        <link>Gallery.html</link>
+    </lavoro>
+    <lavoro>
+        <titolo>Mockup</titolo>
+        <link>Mockup.html</link>
+    </lavoro>
+</portfolio>

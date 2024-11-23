@@ -1,0 +1,94 @@
+[
+    {
+        "nome":"Giancarlo",
+        "cognome":"Esoposito",
+        "eta":28,
+        "indirizzo":"Via Brombei 14",
+        "citta": "Napoli",
+        "tel":{
+            "cel": "3809748831",
+            "casa": "020918863",
+            "ufficio": "3568889672"
+        },
+        "link": "prova.jpg",
+        "cv": "CVEsposito.html",
+        "port":"port.jpg",
+        "prt": "PRTEsposito.xml"
+    },
+    {
+        "nome":"Carla",
+        "cognome":"Adalberti",
+        "eta":40,
+        "indirizzo":"Via Pisacane 8",
+        "citta":"Torino",
+        "tel": {
+            "cel":"3206815525",
+            "casa": "028891457",
+            "ufficio": "3809720123"
+        },
+        "link": "img2.jpg",
+        "cv": "CVAdalberti.html",
+        "port":"port.jpg",
+        "prt": "PRTAdalberti.xml"
+    },
+    {
+        "nome":"Loris",
+        "cognome":"Sepulveda",
+        "eta":36,
+        "indirizzo": "Via Matera 1",
+        "citta": "Ascoli",
+        "tel": {
+            "cel":"3932165578",
+            "casa": "0288842517"
+        },
+        "link": "img3.jpg",
+        "cv": "CVSepulveda.html",
+        "port":"port.jpg",
+        "prt": "PRTSepulveda.xml"
+    },
+    {
+        "nome": "Roberta",
+        "cognome": "Rossi",
+        "eta": 60,
+        "indirizzo": "Via Sforza 11",
+        "citta": "Genova",
+        "tel":{
+            "cel": "3518834244",
+            "ufficio": "321456778"
+        },
+        "link": "img4.jpg",
+        "cv": "CVRossi.html",
+        "port":"port.jpg",
+        "prt": "PRTRossi.xml"
+    },
+    {
+        "nome": "Micheal",
+        "cognome": "Casanova",
+        "eta": 21,
+        "indirizzo": "Via Solfatara 18",
+        "citta": "Perugia",
+        "tel":{
+            "cel": "3756238679"
+        },
+        "link": "img5.jpg",
+        "cv": "CVCasanova.html",
+        "port":"port.jpg",
+        "prt": "PRTCasanova.xml"
+    },
+    {
+        "nome": "Leonardo",
+        "cognome": "Bianchi",
+        "eta": 16,
+        "indirizzo": "Via Pasqua 5",
+        "citta": "Catania",
+        "tel":{
+            "cel":"3396887920",
+            "casa": "0222218765",
+            "ufficio": "346729827"
+        },
+        "link": "img6.jpg",
+        "cv": "CVBianchi.html",
+        "port":"port.jpg",
+        "prt": "PRTBianchi.xml"
+    }
+    ]
