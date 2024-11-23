@@ -1,0 +1,59 @@
+#page{
+    width: 700px;
+    background: rgb(110, 83, 83) url(3COLFIX.gif) 0 0 repeat-y;
+}
+#header{
+    text-align: center;
+    margin: 0 auto;
+    font-size: xx-large;
+    font-style:italic;
+    color: rgb(8, 8, 8);
+    font-weight: bolder;
+    background: grey;
+}
+#left{ 
+    float: left;
+    background: rgb(85, 100, 187);
+    width: 200px;
+    text-align: center;
+    padding: 0.5em 0;
+    font-size:medium ;
+    font-style: oblique;
+}
+#article{
+    float: left;
+    background-image: url(sky.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    width: 300px;
+    text-align: center;
+    padding: 0.5em 0;
+    font-size:large;
+    color: goldenrod;
+    font-weight: bolder;
+
+}
+#right{
+    float: right;
+    background: rgb(253, 253, 161);
+    width: 200px;
+    text-align: center;
+    padding: 0.5em 0;
+    font-size:medium ;
+}
+#footer{
+    clear: both;
+    width: 100%;
+    text-align: center;
+    padding: 0.5em 0;
+    font-size: xx-large;
+    font-style:italic;
+    color: rgb(8, 8, 8);
+    font-weight: bolder;
+    background: grey;
+}
+#par{
+    background-color: rgb(164, 211, 218);
+    color: black;
+    font-weight: bold;
+}

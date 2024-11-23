@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function check(){
+            if(document.answer.quest4[1].checked){
+                localStorage.setItem("q4",1);
+            }
+            else{
+                localStorage.setItem("q4",0);
+            }
+            document.location.href="quest4.5.html";
+        }
+    </script>
+
+<style>
+    body{
+        background-image: url(domanda.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    .bt:hover{
+            background-color: gold;
+            transform: scale(1.2);
+        }
+</style>
+</head>
+<body>
+    <div style="padding-left: 200px;">
+    <h1  style="color: gold; font-size: 60px;">Quarta domanda</h1>
+    <p style="color: aliceblue; font-size: 50px; font-weight: bold;">Quante strisce ha la bandiera degli Stati Uniti?</p>
+    <form name="answer" style="color: aliceblue; font-size: 40px;">
+    <input type="radio" name="quest4" value="1">12
+    <br>
+    <input type="radio" name="quest4" value="2">13
+    <br>
+    <input type="radio" name="quest4" value="3">14
+    </form>
+    <br>
+    <h2 style="color: aliceblue; font-size: 40px;">Conferma risposta e passa alla prossima domanda:</h2>
+    <input type="submit" value="Next" onclick="check()" class="bt"  style="font-weight: bold; height: 50px; width: 130px; font-size: 45px;">
+</div>
+</body>
+</html>

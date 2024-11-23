@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url(result.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div style="padding-left: 200px;">
+    <h1 style="font-size: 60px; color: gold;">Risultato finale</h1>
+    <div id="stampa" style="font-size: 30px; color: aliceblue;"></div>
+    <div style="float: left; font-size: 20px;">
+    <h2 style="color: aqua;">-Prima domanda</h2>
+    <p style="color: rgb(255, 255, 255);">Risposta corretta: Vaticano </p>
+    <div id="q1" style="font-weight: bold; color: gold;"></div>
+    <h2 style="color: aqua;">-Seconda domanda</h2>
+    <p style="color: rgb(255, 255, 255);">Risposta corretta: 88 </p>
+    <div id="q2" style="font-weight: bold; color: gold;"></div>
+    <h2 style="color: aqua;">-Terza domanda</h2>
+    <p style="color: rgb(255, 255, 255);">Risposta corretta: Capitreno </p>
+    <div id="q3" style="font-weight: bold; color: gold;"></div>
+    </div>
+    <div style="float: left; padding-left: 70px; font-size: 20px;">
+    <h2 style="color: aqua;">-Quarta domanda</h2>
+    <p style="color: rgb(255, 255, 255);">Risposta corretta: 13 </p>
+    <div id="q4" style="font-weight: bold; color: gold;"></div>
+    <h2 style="color: aqua;">-Quinta domanda</h2>
+    <p style="color:aliceblue">Risposta corretta: 1989</p>
+    <div id="q6" style="font-weight: bold; color: gold;"></div>
+    <h2 style="color: aqua;">-Sesta domanda</h2>
+    <p style="color: rgb(255, 255, 255);">Risposta corretta: Danimarca </p>
+    <div id="q5" style="font-weight: bold; color: gold;"></div>
+    </div>
+    <br>
+    <div id="fine" style="font-weight: bold; font-size: 40px; color: rgb(255, 82, 39); clear: both; padding-top: 60px;"></div>
+    </div>
+    <script>
+        var punt=0;
+        document.getElementById("stampa").innerHTML=localStorage.getItem("player")+", ecco il tuo punteggio finale:";
+        if(localStorage.getItem("q1")==1){
+            document.getElementById("q1").innerHTML="Hai indovinato!";
+            punt++;}
+        else{
+            document.getElementById("q1").innerHTML="Hai sbagliato...";}
+
+        if(localStorage.getItem("q2")==1){
+            document.getElementById("q2").innerHTML="Hai indovinato!";
+            punt++;}
+        else{
+            document.getElementById("q2").innerHTML="Hai sbagliato...";}
+
+        if(localStorage.getItem("q3")==1){
+            document.getElementById("q3").innerHTML="Hai indovinato!";
+            punt++;}
+        else{
+            document.getElementById("q3").innerHTML="Hai sbagliato...";}
+
+        if(localStorage.getItem("q4")==1){
+            document.getElementById("q4").innerHTML="Hai indovinato!";
+            punt++;}
+        else{
+            document.getElementById("q4").innerHTML="Hai sbagliato...";}
+
+        if(localStorage.getItem("q4.5")==1){
+            document.getElementById("q6").innerHTML="Hai indovinato!";
+            punt++}
+        else{
+            document.getElementById("q6").innerHTML="Hai sbagliato...";}
+
+        if(localStorage.getItem("q5")==1){
+            document.getElementById("q5").innerHTML="Hai indovinato!";
+            punt++;}
+        else{
+            document.getElementById("q5").innerHTML="Hai sbagliato...";}
+
+        document.getElementById("fine").innerHTML="Il tuo punteggio finale è di "+punt+" su 6";
+        
+    </script>
+</body>
+</html>

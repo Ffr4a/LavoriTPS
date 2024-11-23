@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function invio(){
+            const Vett=[];
+            const inputs=document.forms["Data"];
+            for(i=0;i<inputs.length;i++){
+                Vett.push(inputs[i].value);
+            }
+            localStorage.setItem("collect",Vett);
+            document.location.href="Receive.html"
+        }
+    </script>
+    <style>
+        input:hover{
+            background-color: rgb(241, 227, 162);
+        }
+        .button:hover{
+            background-color: coral;
+            transform: scale(1.2);
+        }
+        .button{
+            font-size: x-large;
+            width: 90px;
+            height: 50px;
+        }
+        body{
+            background-image:url(Aqui.png);
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <center><h1 style="color: red; font-weight: bold; font-size: 60px;">AQUISIZIONE DATI</h1>
+    <form name="Data" >
+        <p style="color: rgb(255, 255, 255); font-weight: bold; font-size: 30px;">Campo 1: <input type="text" class="input" placeholder="Add text" style="height: 30px; font-size: 25px; color: darkgreen; font-weight: bold;"></p>
+        <br><br>
+        <p style="color: rgb(255, 255, 255); font-weight: bold; font-size: 30px;">Campo 2: <input type="text" class="input" placeholder="Add text" style="height: 30px; font-size: 25px; color: darkgreen; font-weight: bold;"></p>
+        <br><br>
+        <p style="color: rgb(255, 255, 255); font-weight: bold; font-size: 30px;">Campo 3: <input type="text" class="input" placeholder="Add text" style="height: 30px; font-size: 25px; color: darkgreen; font-weight: bold;"></p>
+    </form>
+    <br>
+    <p style="font-weight: bold; font-size: 33px; color: rgb(238, 183, 43);">Per inviare i dati presso la prossima pagina: </p>
+    <input type="button" value="INVIA" class="button" onclick="invio()"></center>
+</body>
+</html>

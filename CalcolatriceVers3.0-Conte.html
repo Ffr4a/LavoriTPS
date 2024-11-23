@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var ris;
+        let out = [""];
+        var nins=0;
+        function input(num){
+            switch(num){
+                case '+':
+                case 'x':
+                case '-':
+                case '/':
+                case '√':
+                case '^':
+                case '%':
+                    out.push(num);
+                    nins+=2; //il  puntatore arriva al posto successivo al segno
+                    out.push("");
+                    document.getElementById('Output').value="";
+                    break;
+                default:
+                    out[nins]+=num;
+                    document.getElementById('Output').value=out[nins];
+                    break;
+            }
+        }
+        var ris="";
+        var calc=0; //var temporanea per i calcoli
+        var canc=0; //var per eliminare l'eccesso del vettore
+        var check=true; //variabile che se rileva ERROR o INFINITO, esce dal calcolo
+        var b=true; //variabile per il ciclo di ricerca
+        function show(){
+            nins=0;//a fine calcolo out conterrà un solo valore
+            while(b){
+                b=false;
+                for(i=0;i<out.length;i++){ //for che verifica radice, potenza 
+                    if(out[i]=='√'){
+                        b=true;
+                        calc=Math.sqrt(parseFloat(out[i+1]));
+                        out[i-1]=calc;
+                        out[i]="";
+                        out[i+1]=""
+                        calc=0;
+                        if(i+2!=out.length){
+                            for(m=i+2;m<out.length;m++){
+                        out[m-2]=out[m];
+                        canc=m-2;}
+                        for(canc;canc<out.length;canc++){
+                        out.pop();
+                    }
+                    }
+                    else{
+                        for(a=0;a<2;a++){
+                        out.pop();
+                        }
+                    }
+
+            }
+            if(out[i]=='^'){
+                b=true;
+                calc=Math.pow(out[i-1],out[i+1]);
+                out[i-1]=calc;
+                    out[i]="";
+                    out[i+1]="";
+                    calc=0;
+                    if(i+2!=out.length){  
+                    for(m=i+2;m<out.length;m++){
+                        out[m-2]=out[m];
+                        canc=m-2;}
+                    for(canc+1;canc<out.length;canc++){
+                        out.pop();
+                    }
+
+                    }
+               else{
+                    for(a=0;a<2;a++){
+                        out.pop();
+                    }
+                    }   
+                }
+        }
+    }
+    b=true;
+            while(b){
+            b=false;
+            for(i=0;i<out.length;i++){ //for che verifica moltiplicazioni e divisioni (o resto (%))
+                if(out[i]=='x'){
+                    b=true;
+                    calc=parseFloat(out[i-1])*parseFloat(out[i+1]);
+                    out[i-1]=calc;
+                    out[i]="";
+                    out[i+1]="";
+                    calc=0;
+                    if(i+2!=out.length){  //nel caso in cui ci fossero altre operazioni successive, dobbiamo spostare il tutto a sinistra togliendo poi l'eccesso
+                    for(m=i+2;m<out.length;m++){
+                        out[m-2]=out[m];
+                        canc=m-2;}
+                    for(canc+1;canc<out.length;canc++){
+                        out.pop();
+                    }
+
+                    }
+               else{
+                    for(a=0;a<2;a++){
+                        out.pop();
+                    }
+                    }   
+                }
+            if(out[i]=='/'){
+                b=true;
+                if(out[i+1]==0 && out[i-1]!=0){ //non si può dividere per zero;
+                    ris='ERROR';
+                    check=false;
+                    b=false;
+                }
+                else if(out[i+1]==0 && out[i-1]==0){
+                    ris='INFINITO';
+                    check=false;
+                    b=false;
+                }
+                else{
+                    calc=parseFloat(out[i-1])/parseFloat(out[i+1]);
+                    out[i-1]=calc;
+                    out[i]="";
+                    out[i+1]="";
+                    calc=0;
+                    if(i+2!=out.length){
+                    for(m=i+2;m<out.length;m++){
+                        out[m-2]=out[m];
+                        canc=m-2;}
+                    for(canc+1;canc<out.length;canc++){
+                        out.pop();
+                    }
+                }
+                else{
+                    for(a=0;a<2;a++){
+                        out.pop();
+                    }
+                    }   
+                
+            }
+        }
+        if(out[i]=='%'){
+                b=true;
+                if(out[i+1]==0 && out[i-1]!=0){ //non si può dividere per zero;
+                    ris='ERROR';
+                    check=false;
+                    b=false;
+                }
+                else if(out[i+1]==0 && out[i-1]==0){
+                    ris='INFINITO';
+                    check=false;
+                    b=false;
+                }
+                else{
+                    calc=parseFloat(out[i-1])%parseFloat(out[i+1]);
+                    out[i-1]=calc;
+                    out[i]="";
+                    out[i+1]="";
+                    calc=0;
+                    if(i+2!=out.length){
+                    for(m=i+2;m<out.length;m++){
+                        out[m-2]=out[m];
+                        canc=m-2;}
+                    for(canc+1;canc<out.length;canc++){
+                        out.pop();
+                    }
+                }
+                else{
+                    for(a=0;a<2;a++){
+                        out.pop();
+                    }
+                    }   
+                
+            }
+        }
+            
+        }
+    }
+        if(check){
+            b=true;
+            while(b){
+                b=false;
+            for(i=0;i<out.length;i++){
+                if(out[i]=='+'){
+                    b=true;
+                    calc=1*(out[i-1])+1*(out[i+1]);
+                    out[i-1]=calc;
+                    out[i]="";
+                    out[i+1]="";
+                    if(i+2!=out.length){  
+                    for(m=i+2;m<out.length;m++){
+                        out[m-2]=out[m];
+                        canc=m-2;}
+                    for(canc+1;canc<out.length;canc++){
+                        out.pop();
+                    }
+
+                }
+                else{
+                    for(a=0;a<2;a++){
+                        out.pop();
+                    }
+                    }   
+            }
+            if(out[i]=='-'){
+                b=true;
+                    calc=1*(out[i-1])-1*(out[i+1]);
+                    out[i-1]=calc;
+                    out[i]="";
+                    out[i+1]="";
+                    if(i+2!=out.length){  
+                    for(m=i+2;m<out.length;m++){
+                        out[m-2]=out[m];
+                        canc=m-2;}
+                    for(canc+1;canc<out.length;canc++){
+                        out.pop();
+                    }
+
+                }
+                else{
+                    for(a=0;a<2;a++){
+                        out.pop();
+                    }
+                    }   
+            }
+        }
+    }
+  ris=out[0];  
+}
+
+document.getElementById('Output').value=ris;
+    b=true;
+}
+
+function reset(){
+    document.getElementById('Output').value="";
+    out = [""];
+    nins=0;
+    check=true;
+}
+    
+    </script>
+
+<style>
+    body{
+        background-image: url(numbers.avif);
+        background-size: cover;
+        background-attachment: fixed;
+    }
+</style>
+</head>
+<body>
+    <center>
+    <input type="text" id="Output" readonly style="width: 300px; height: 40px; font-size: 40px; margin-top: 20px;">
+    <br>
+    <br>
+    <input type="button" value="1"  onclick="input('1')" style="width:50px ; height:50px ; font-size: 40px; padding: 5px;">
+    <input type="button" value="2"  onclick="input('2')" style="width:50px ; height:50px ; font-size: 40px; padding: 5px;">
+    <input type="button" value="3"  onclick="input('3')" style="width:50px ; height:50px ; font-size: 40px; padding: 5px;">
+    <input type="button" value="+" onclick="input('+')" style="width:50px ; height:50px ; font-size: 40px; padding: 5px;">
+    <br>
+    <input type="button" value="4"  onclick="input('4')" style="width:50px ; height:50px ; font-size: 40px; padding: 5px;">
+    <input type="button" value="5"  onclick="input('5')" style="width:50px ; height:50px ; font-size: 40px; padding: 5px;">
+    <input type="button" value="6"  onclick="input('6')" style="width:50px ; height:50px ; font-size: 40px; padding: 5px;">
+    <input type="button" value="x" onclick="input('x')" style="width:50px ; height:50px ; font-size: 40px; padding: 5px;">
+    <br>
+    <input type="button" value="7"  onclick="input('7')" style="width:50px ; height:50px ; font-size: 40px; padding: 5px;">
+    <input type="button" value="8"  onclick="input('8')" style="width:50px ; height:50px ; font-size: 40px; padding: 5px;">
+    <input type="button" value="9"  onclick="input('9')" style="width:50px ; height:50px ; font-size: 40px; padding: 5px;">
+    <input type="button" value="-" onclick="input('-')" style="width:50px ; height:50px ; font-size: 40px; padding: 5px;">
+    <br>
+    <input type="button" value="/" onclick="input('/')" style="width:50px ; height:50px ; font-size: 40px; padding: 5px;">
+    <input type="button" value="0" onclick="input('0')" style="width:50px ; height:50px ; font-size: 40px; padding: 5px;">
+    <input type="button" value="√" onclick="input('√')" style="width:50px ; height:50px ; font-size: 40px; padding: 5px;">
+    <input type="button" value="^" onclick="input('^')" style="width:50px ; height:50px ; font-size: 40px; padding: 5px;">
+    <br>
+    <input type="button" value="%" onclick="input('%')" style="width:50px ; height:50px ; font-size: 40px; padding: 5px;">
+    <input type="button" value="=" onclick="show()" style="width:50px ; height:50px ; font-size: 40px; padding: 5px;">
+    <input type="button" value="RST" onclick="reset()" style="width:100px ; height:50px ; font-size: 40px; padding: 5px;">
+    </center>
+</body>
+</html>

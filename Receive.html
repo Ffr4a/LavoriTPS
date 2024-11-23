@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+      div{
+        font-size: 50px;
+        font-weight: bold;
+        padding-top: 40px;
+        color: aliceblue;
+      }
+
+      body{
+            background-image:url(bb.avif);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1 style="color: orange; font-weight: bold; font-size: 60px;">RICEZIONE DATI</h1>
+        <h2 style="color: grey; font-size: 30px;">Ecco le informazioni da te inserite:</h2>
+        <br><br>
+        <div id="first"></div>
+        <br><br>
+        <div id="second"></div> 
+        <br><br>
+        <div id="third"></div>
+        <br><br><br> 
+    </center>
+    <script>
+        var rec=localStorage.getItem("collect");
+        rec=rec.split(",");
+        document.getElementById("first").innerHTML="-"+rec[0];
+        document.getElementById("second").innerHTML="-"+rec[1];
+        document.getElementById("third").innerHTML="-"+rec[2];
+    </script>
+    
+</body>
+</html>

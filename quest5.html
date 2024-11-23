@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function check(){
+            if(document.answer.quest5[0].checked){
+                localStorage.setItem("q5",1);
+            }
+            else{
+                localStorage.setItem("q5",0);
+            }
+            document.location.href="result.html";
+        }
+    </script>
+
+<style>
+    body{
+        background-image: url(domanda.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    .bt:hover{
+            background-color: gold;
+            transform: scale(1.2);
+        }
+</style>
+</head>
+<body>
+    <div style="padding-left: 200px;">
+    <h1  style="color: gold; font-size: 60px;">Ultima domanda</h1>
+    <p style="color: aliceblue; font-size: 50px; font-weight: bold;">Quale squadra vinse il campionato calcistico europeo, nell'anno 1992?</p>
+    <form name="answer" style="color: aliceblue;font-size: 40px;">
+    <input type="radio" name="quest5" value="1">Danimarca
+    <br>
+    <input type="radio" name="quest5" value="2">Germania
+    <br>
+    <input type="radio" name="quest5" value="3">Italia
+    </form>
+    <br>
+    <h2 style="color: aliceblue; font-size: 40px;">Conferma risposta e vai al risultato finale:</h2>
+    <input type="submit" value="Invia"  onclick="check()" class="bt"  style="font-weight: bold; height: 50px; width: 130px; font-size: 45px;">
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function start(){
+        var nm=document.getElementById("nome").value;
+        localStorage.setItem("player",nm);
+        document.location.href="quest1.html";
+        
+    }
+    </script>
+
+    <style>
+        body{
+            background-image: url(intro.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .bt:hover{
+            background-color: cyan;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h1 style="font-size: 70px; font-weight: bold; color:gold;">QUIZ CON PUNTEGGIO</h1>
+    <h2 style="font-size: 40px; color: aliceblue; ">Benvenuto!</h2>
+    <h2 style="font-size: 40px; color: aliceblue ">In questo gioco dovrai rispondere alle domande proposte, ed ottenere così un punteggio</h2>
+    <h3 style="font-size: 40px; color: aliceblue ;">ogni risposta esatta vale 1 punto, sbagliata 0</h3>
+    <p></p>
+    <p></p>
+    <BR></BR>
+    <p style="font-size: 40px; color: aliceblue">Registrarsi con il proprio nome:</p>  
+    <p style="color: aliceblue;">*CAMPO OBBLIGATORIO</p>
+    <input type="text" id="nome" style="height: 30px; font-size: 20px;">
+    <br>
+    <h3 style="font-size: 40px; color: aliceblue;">Inizia con le domande</h3>
+    <input type="submit" value="Inizia" onclick="start()" style="height: 60px; width: 170px; font-size: 40px;" class="bt">
+    </center>
+</body>
+</html>
