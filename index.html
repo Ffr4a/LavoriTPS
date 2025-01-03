@@ -1,26 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index.html</title>
-    <link rel="stylesheet" href="./indexstyle.css">
-    <style>
-        body{
-            background-image:url(index.jpg) ;
-            background-size: cover;
-            background-attachment: fixed;
+    <title>Client SOAP - Giorno della Settimana</title>
+    <script>
+        async function fetchDayOfWeek() {
+            const day = document.getElementById('day').value;
+            const month = document.getElementById('month').value;
+            const year = document.getElementById('year').value;
+
+            const soapMessage = `
+    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="https://ffr4a.github.io/LavoriTPS">
+        <soapenv:Header/>
+        <soapenv:Body>
+            <urn:getDayOfWeek>
+                <day>${day}</day>
+                <month>${month}</month>
+                <year>${year}</year>
+            </urn:getDayOfWeek>
+        </soapenv:Body>
+    </soapenv:Envelope>
+`;
+
+            const response = await fetch('http://localhost:8080/DateService', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/xml; charset=utf-8',
+                },
+                body: soapMessage
+            });
+
+            const text = await response.text();
+            document.getElementById('result').innerText = text;
         }
-    </style>
+    </script>
 </head>
-<body bgcolor="Grey">
-    <center><h1 style="color: red ;">Catalogo lavori</h1></center>
-     <ul id="type1">
-     <li><a href="Loader.html" target="_blank">Anagrafica</a></li>
-     <li><a href="AnagrafPlus.html" target="_blank">Anagrafica plus</a></li>
-     <li><a href="Anagrafica3.html" target="_blank">Anagrafica 3</a></li>
-     <li><a href="Anagraf4.html" target="_blank">Anagrafica 4</a></li>
-     </ul>   
+<body>
+    <h1>Richiesta Giorno della Settimana</h1>
+    <input id="day" type="number" placeholder="Giorno" required />
+    <input id="month" type="number" placeholder="Mese" required />
+    <input id="year" type="number" placeholder="Anno" required />
+    <button onclick="fetchDayOfWeek()">Verifica Giorno</button>
+    <h2>Risultato:</h2>
+    <pre id="result"></pre>
 </body>
 </html>
