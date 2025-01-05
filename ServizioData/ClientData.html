@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Client SOAP - Giorno della Settimana</title>
+</head>
+<body>
+    <h1>Richiesta Giorno della Settimana</h1>
+    <input id="day" type="number" placeholder="Giorno" required />
+    <input id="month" type="number" placeholder="Mese" required />
+    <input id="year" type="number" placeholder="Anno" required />
+    <button onclick="fetchDayOfWeek()">Verifica Giorno</button>
+    <h2>Risultato:</h2>
+    <pre id="result"></pre>
+    
+    <script>
+        async function fetchDayOfWeek() {
+            const day = document.getElementById('day').value;
+            const month = document.getElementById('month').value;
+            const year = document.getElementById('year').value;
+            
+            const xmlMessage = `
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:getDayOfWeek">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <urn:getDayOfWeek>
+            <day>${day}</day>
+            <month>${month}</month>
+            <year>${year}</year>
+        </urn:getDayOfWeek>
+    </soapenv:Body>
+</soapenv:Envelope>
+`;
+            
+            const request = new XMLHttpRequest();
+            request.open('POST', 'http://localhost:8081/DateService', true);
+            request.setRequestHeader('Content-Type', 'text/xml');
+            request.send(xmlMessage);
+            
+            request.onload = function() {
+                if (request.status === 200) {
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(request.response, 'text/xml');
+                    const result = xmlDoc.getElementsByTagName('urn:return')[0].textContent; // Cambiato 'return' in 'urn:return'
+                    document.getElementById('result').innerText = result;
+                } else {
+                    console.error('Errore:', request.statusText);
+                }
+            };
+            
+            request.onerror = function() {
+                console.error('Errore:', request.statusText);
+            };
+        }
+    </script>
+</body>
+</html>
