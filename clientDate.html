@@ -22,16 +22,29 @@
     </soapenv:Envelope>
 `;
 
-            const response = await fetch('http://localhost:8080/DateService', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'text/xml; charset=utf-8',
-                },
-                body: soapMessage
-            });
+            try {
+                const response = await fetch('http://localhost:8081/DateService', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'text/xml; charset=utf-8',
+                    },
+                    body: soapMessage
+                });
 
-            const text = await response.text();
-            document.getElementById('result').innerText = text;
+                if (!response.ok) {
+                    throw new Error('Errore nella risposta: ' + response.status);
+                }
+
+                const text = await response.text();
+                // Parsing della risposta XML per estrarre il giorno della settimana
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(text, "text/xml");
+                const result = xmlDoc.getElementsByTagName("return")[0].textContent;
+
+                document.getElementById('result').innerText = result;
+            } catch (error) {
+                document.getElementById('result').innerText = 'Errore: ' + error.message;
+            }
         }
     </script>
 </head>
