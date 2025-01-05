@@ -41,15 +41,24 @@
                 if (request.status === 200) {
                     const parser = new DOMParser();
                     const xmlDoc = parser.parseFromString(request.response, 'text/xml');
-                    const result = xmlDoc.getElementsByTagName('urn:return')[0].textContent; // Cambiato 'return' in 'urn:return'
-                    document.getElementById('result').innerText = result;
+
+                    // Controlla se ci sono errori
+                    const errorElement = xmlDoc.getElementsByTagName('urn:error')[0];
+                    if (errorElement) {
+                        document.getElementById('result').innerText = errorElement.textContent; // Stampa l'errore
+                    } else {
+                        const result = xmlDoc.getElementsByTagName('urn:return')[0]?.textContent;
+                        document.getElementById('result').innerText = result ? result : 'Nessun risultato trovato.';
+                    }
                 } else {
                     console.error('Errore:', request.statusText);
+                    document.getElementById('result').innerText = 'Errore nella richiesta: ' + request.statusText;
                 }
             };
             
             request.onerror = function() {
                 console.error('Errore:', request.statusText);
+                document.getElementById('result').innerText = 'Errore nella connessione: ' + request.statusText;
             };
         }
     </script>
