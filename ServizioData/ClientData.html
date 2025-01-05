@@ -10,8 +10,12 @@
     <input id="month" type="number" placeholder="Mese" required />
     <input id="year" type="number" placeholder="Anno" required />
     <button onclick="fetchDayOfWeek()">Verifica Giorno</button>
+    
     <h2>Risultato:</h2>
     <pre id="result"></pre>
+
+    <h2>Risposta XML:</h2>
+    <pre id="xmlResponse"></pre> <!-- Nuovo elemento per visualizzare la risposta XML -->
     
     <script>
         async function fetchDayOfWeek() {
@@ -41,6 +45,9 @@
                 if (request.status === 200) {
                     const parser = new DOMParser();
                     const xmlDoc = parser.parseFromString(request.response, 'text/xml');
+
+                    // Mostra la risposta XML ricevuta
+                    document.getElementById('xmlResponse').innerText = request.response; // Mostra la risposta XML
 
                     // Controlla se ci sono errori
                     const errorElement = xmlDoc.getElementsByTagName('urn:error')[0];
