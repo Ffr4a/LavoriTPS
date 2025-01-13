@@ -1,0 +1,46 @@
+<definitions name="GeolocationService"
+             targetNamespace="http://localhost/soap/geolocation_service"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://localhost/soap/geolocation_service"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <message name="GeolocationRequest">
+        <part name="ip" type="xsd:string"/>
+    </message>
+
+    <message name="GeolocationResponse">
+        <part name="country" type="xsd:string"/>
+        <part name="region" type="xsd:string"/>
+        <part name="city" type="xsd:string"/>
+        <part name="latitude" type="xsd:string"/>
+        <part name="longitude" type="xsd:string"/>
+    </message>
+
+    <portType name="GeolocationPortType">
+        <operation name="getIpGeolocation">
+            <input message="tns:GeolocationRequest"/>
+            <output message="tns:GeolocationResponse"/>
+        </operation>
+    </portType>
+
+    <binding name="GeolocationBinding" type="tns:GeolocationPortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="getIpGeolocation">
+            <soap:operation soapAction="getIpGeolocation"/>
+            <input>
+                <soap:body use="encoded" namespace="urn:geolocation" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="urn:geolocation" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+    </binding>
+
+    <service name="GeolocationService">
+        <documentation>Service for IP Geolocation</documentation>
+        <port binding="tns:GeolocationBinding" name="GeolocationPort">
+            <soap:address location="http://127.0.0.1/soap/server.php"/>
+        </port>
+    </service>
+</definitions>
