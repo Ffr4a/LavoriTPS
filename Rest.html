@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elenco Paesi</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e8f5fd; 
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50; 
+            margin-bottom: 30px;  
+            font-size: 2.5em;  
+        }
+        #elencoPaesi {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;  
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        #elencoPaesi li {
+            background-color: #ffffff;
+            padding: 20px;  
+            border: 1px solid #ddd;
+            border-radius: 10px;  
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;  
+            position: relative;  
+            overflow: hidden;  
+        }
+        #elencoPaesi li::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0; 
+            background: rgba(0, 0, 0, 0.05);  
+            transition: opacity 0.2s ease;  
+            z-index: 0; 
+        }
+        #elencoPaesi li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        #elencoPaesi li:hover::before {
+            opacity: 0;  
+        }
+        h2 {
+            font-size: 1.8em;  
+            margin: 0 0 10px; 
+            color: #2980b9; 
+        }
+        p {
+            margin: 5px 0 0;
+            color: #555; 
+            font-size: 1.1em; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Elenco Paesi</h1>
+    <ul id="elencoPaesi"></ul>
+    <script>
+        const urlPaesi = 'https://restcountries.com/v3.1/all';
+        fetch(urlPaesi)
+            .then(risposta => {
+                if (!risposta.ok) {
+                    throw new Error('Errore rilevato nella risposta di rete: ' + risposta.statusText);
+                }
+                return risposta.json();
+            })
+            .then(dati => {
+                const listaPaesi = document.getElementById('elencoPaesi');
+                dati.forEach(paese => {
+                    const elementoLista = document.createElement('li');
+                    elementoLista.innerHTML = `
+                        <h2>${paese.name.common}</h2>
+                        <p>Capitale: <strong>${paese.capital ? paese.capital[0] : 'N/A'}</strong></p>                 `;
+                    listaPaesi.appendChild(elementoLista);
+                });
+            })
+            .catch(errore => {
+                console.error('Rilevato un problema con la richiesta di Fetch:', errore);
+            });
+    </script>
+</body>
+</html>
