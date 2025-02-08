@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mappa con Localizzazione</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-image: url(bg.avif);
+            background-size: cover;
+            background-attachment: fixed;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+            font-family: 'Playfair Display', cursive; 
+        }
+
+        #map {
+            height: 500px;
+            width: 90%;
+            max-width: 900px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+            margin-top: 20px; 
+        }
+
+        #bottone {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 2em; 
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px; 
+        }
+        
+        #bottone:hover {
+            background-color: #ff4d4d;
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        #bottone:active {
+            transform: scale(0.95);
+        }
+
+        
+        #map:hover {
+            transform: scale(1.02);
+        }
+
+        
+        #cordinate {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            font-size: 2em; 
+            transition: transform 0.3s;
+            margin-top: 20px;
+        }
+
+        #cordinate:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+<h1>Localizzazione sulla mappa</h1>
+<button id="bottone">Localizzami</button>
+<div id="map"></div>
+<div id="cordinate">Qui appariranno le tue coordinate!</div>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+
+const map = L.map('map').setView([51.505, -0.09], 2);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+}).addTo(map);
+
+function Localizzazione() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+                map.setView([lat, lon], 15);
+                L.marker([lat, lon]).addTo(map)
+                    .bindPopup('La tua posizione!')
+                    .openPopup();
+                document.getElementById("cordinate").innerHTML = `
+                    <strong>Latitudine:</strong> ${lat.toFixed(5)}<br>
+                    <strong>Longitudine:</strong> ${lon.toFixed(5)}
+                `;
+            },
+            () => {
+                alert("Errore nel recuperare la posizione.");
+                document.getElementById("cordinate").innerText = '';
+            }
+        );
+    } else {
+        alert("Geolocalizzazione non è supportata da questo browser.");
+        document.getElementById("cordinate").innerText = '';
+    }
+}
+
+document.getElementById("bottone").addEventListener("click", Localizzazione);
+</script>
+
+</body>
+</html>
